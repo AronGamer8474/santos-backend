@@ -6,8 +6,8 @@ app = Flask(__name__)
 # ─────────────────────────────────────────────────────────────
 # CHANGE THESE THREE LINES BEFORE DEPLOYING
 # ─────────────────────────────────────────────────────────────
-USER_KEY  = "user_"  + "a" * 40   # clients send this. Not very secret.
-ADMIN_KEY = "admin_" + "b" * 40   # YOU send this to post. Keep private.
+USER_KEY  = "user_test_7f4a91c2"
+ADMIN_KEY = "admin_test_9b82e6d1"
 PORT      = int(os.environ.get("PORT", 8080))
 # ─────────────────────────────────────────────────────────────
 
@@ -84,7 +84,7 @@ def announce():
 @app.post("/discord-relay/<token>")
 def discord_relay(token):
     # Wire a Discord webhook here so you can post announcements from Discord.
-    if token != "SantosRelay_8xK4mP92vL7q":
+    if token != "MTU0OTQyNjI2Mzg3NjQzNjAzOQ.GZjjmn.VeRW3Yiu1NjXEnIXRRswGAzjqfoSmEPXhASbfQ":
         abort(404)
     body = request.get_json(silent=True) or {}
     text = str(body.get("content", "")).strip()
