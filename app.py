@@ -84,7 +84,7 @@ def announce():
 @app.post("/discord-relay/<token>")
 def discord_relay(token):
     # Wire a Discord webhook here so you can post announcements from Discord.
-    if token != "replace_with_random_token_here":
+    if token != "SantosRelay_8xK4mP92vL7q":
         abort(404)
     body = request.get_json(silent=True) or {}
     text = str(body.get("content", "")).strip()
